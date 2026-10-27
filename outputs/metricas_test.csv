@@ -1,0 +1,4 @@
+modelo,accuracy,precision_macro,recall_macro,f1_macro,precision_weighted,recall_weighted,f1_weighted,ms_por_imagen
+CNN desde cero,0.9918,0.9856,0.9893,0.987,0.9922,0.9918,0.9919,7.4094
+MobileNetV2 congelado,0.5991,0.5539,0.5083,0.5164,0.6077,0.5991,0.5962,3.0929
+MobileNetV2 fine-tuning,0.7676,0.7464,0.704,0.7102,0.7894,0.7676,0.7668,3.6177
