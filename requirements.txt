@@ -10,3 +10,4 @@ matplotlib
 seaborn
 gradio
 ipykernel
+pytest

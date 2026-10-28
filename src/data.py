@@ -26,7 +26,17 @@ CLASS_NAMES = [
 
 
 def download_gtsrb():
-    """Descarga el dataset con kagglehub (queda en su caché) y devuelve la carpeta raíz."""
+    """Devuelve el dataset en cache o lo descarga con kagglehub."""
+    cache = (Path.home() / ".cache" / "kagglehub" / "datasets" /
+             "meowmeowmeowmeowmeow" / "gtsrb-german-traffic-sign" / "versions")
+    if cache.exists():
+        versions = sorted(
+            (path for path in cache.iterdir() if (path / "Train.csv").exists() and (path / "Test.csv").exists()),
+            key=lambda path: int(path.name) if path.name.isdigit() else -1,
+            reverse=True,
+        )
+        if versions:
+            return versions[0]
     import kagglehub
     return Path(kagglehub.dataset_download(KAGGLE_ID))
 
