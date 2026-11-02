@@ -22,8 +22,11 @@
 \setlength{\parskip}{0.25em}
 \captionsetup{font=small,labelfont=bf}
 
+% Enlace al video de demostracion.
+\newcommand{\videourl}{https://youtu.be/QKezHRry-co}
+
 \title{Clasificaci\'on de se\~nales de tr\'ansito mediante redes neuronales convolucionales}
-\author{Mar\'ia Jos\'e Gir\'on -- 23559 \and Leonardo Mej\'ia -- 23648 \and Milton Polanco -- 23471}
+\author{Mar\'ia Jos\'e Gir\'on -- 23559 \and Leonardo Mej\'ia -- 23648 \and Milton Polanco -- 23471 \and Dilary Cruz -- 231010}
 \date{Octubre de 2026}
 
 \begin{document}
@@ -41,6 +44,7 @@
     {\large Mar\'ia Jos\'e Gir\'on -- 23559\par}
     {\large Leonardo Mej\'ia -- 23648\par}
     {\large Milton Polanco -- 23471\par}
+    {\large Dilary Cruz -- 231010\par}
     \vfill
     {\large Octubre de 2026\par}
 \end{titlepage}
@@ -209,8 +213,15 @@ La CNN compacta entrenada desde cero fue la mejor alternativa para GTSRB: alcanz
 
 El an\'alisis de robustez identific\'o el desenfoque como la principal debilidad: la exactitud cae a 55.74\% en la severidad m\'axima, mientras que el oscurecimiento severo conserva 98.15\%. Grad-CAM confirma que la red suele atender la regi\'on de la se\~nal incluso cuando se equivoca. Como continuaci\'on se propone entrenar con ruido y desenfoque, calibrar las probabilidades, evaluar im\'agenes locales y ampliar el conjunto con se\~nales de otras regiones.
 
+\section*{Video de demostraci\'on}
+\addcontentsline{toc}{section}{Video de demostraci\'on}
+
+El video muestra la aplicaci\'on Gradio clasificando se\~nales en vivo con su explicaci\'on Grad-CAM, describe brevemente la implementaci\'on y resume los hallazgos principales. Est\'a disponible en: \url{\videourl}
+
 \section*{Reproducibilidad}
 \addcontentsline{toc}{section}{Reproducibilidad}
+
+Repositorio p\'ublico: \url{https://github.com/tismajo/CC2017-ProyectoFinal}
 
 El repositorio contiene los m\'odulos de datos, modelos, entrenamiento, m\'etricas, inferencia, robustez y Grad-CAM; notebooks ejecutados; scripts para regenerar figuras; pruebas automatizadas; y la aplicaci\'on Gradio. El archivo \texttt{requirements.txt} enumera las dependencias. El dataset se almacena en la cach\'e de kagglehub y no se duplica en el repositorio.
 
